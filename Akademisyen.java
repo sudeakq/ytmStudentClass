@@ -1,22 +1,18 @@
 public class Akademisyen {
-    private String ad;
-    private String soyad;
+    private String akademisyenAd;
+    private String akademisyenSoyad;
 
-    public Akademisyen(String ad, String soyad) {
-        this.ad = ad;
-        this.soyad = soyad;
+
+    public Akademisyen(String akademisyenAd, String akademisyenSoyad){
+        this.akademisyenAd=akademisyenAd;
+        this.akademisyenSoyad=akademisyenSoyad;
     }
 
-    public String getAd() {
-        return ad;
+    public String getAd(){
+        return  akademisyenAd;
     }
 
-    public String getSoyad() {
-        return soyad;
-    }
-
-    @Override
-    public String toString() {
-        return ad + " " + soyad;
+    public String getSoyad(){
+        return  akademisyenSoyad;
     }
 }
