@@ -10,6 +10,7 @@ class UygulamaliDers extends Ders {
                 throw new IllegalArgumentException("Uygulamalı dersler için 2 not girilmelidir (Vize, Final)");
             }
             double ortalama = (notlar[0] * 0.4) + (notlar[1] * 0.6);
+            setDersHarfNotu(super.harfNotu(ortalama));
             return super.harfNotu(ortalama);
         }
     }

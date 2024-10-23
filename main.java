@@ -13,9 +13,10 @@ public class Main {
 
         BilgiPaketi bilgiPaketi1 = new BilgiPaketi();
 
-        ders1.derseYazilim(ogrenci1);
+        lab1.derseYazilim(ogrenci1);
+        lab1.notHesapla(90,60);
 
-        bilgiPaketi1.dersEkle(ders1);
+        bilgiPaketi1.dersEkle(lab1);
 
         bilgiPaketi1.TranskriptSorgula(ogrenci1);
 

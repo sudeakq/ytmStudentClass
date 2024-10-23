@@ -10,15 +10,15 @@ abstract class Ders {
     protected int kredi;
     protected Akademisyen dersSorumlusu;
     private List<Ogrenci> ogrenciListesi;
+    private String dersHarfNotu;
 
-    public Ders(String dersAdi, String dersKodu, String donem,Akademisyen  dersSorumlusu,int kredi ){
+    public Ders(String dersAdi, String dersKodu, String donem, Akademisyen dersSorumlusu, int kredi) {
         this.dersAdi = dersAdi;
         this.dersKodu = dersKodu;
         this.donem = donem;
         this.dersSorumlusu = dersSorumlusu;
         this.kredi = kredi;
         ogrenciListesi = new ArrayList<>();
-
     }
 
     public abstract String notHesapla(double... notlar);
@@ -43,30 +43,35 @@ abstract class Ders {
         }
     }
 
-    protected String harfNotu(double ortalama){
-        if(ortalama>=90){
-            return "AA";
-        }
-        else if(ortalama>=80){
-            return "BA";
-        }
-        else if(ortalama>=70){
-            return "BB";
-        }
-        else if(ortalama>=60){
-            return "CB";
-        }
-        else if(ortalama>=50){
-            return "CC";
-        }
-        else if(ortalama>=40){
-            return "DC";
-        }
-        else if(ortalama>=30){
-            return "DD";
-        }
-        else{
-            return "FF";
+    public String getDersHarfNotu() {
+        return dersHarfNotu;
+    }
+
+    public void setDersHarfNotu(String dersHarfNotu) {
+        this.dersHarfNotu = dersHarfNotu;
+    }
+
+    protected String harfNotu(double ortalama) {
+        int yuvarlanmisOrtalama = (int) ortalama / 10;
+
+        switch (yuvarlanmisOrtalama) {
+            case 10:
+            case 9:
+                return "AA";
+            case 8:
+                return "BA";
+            case 7:
+                return "BB";
+            case 6:
+                return "CB";
+            case 5:
+                return "CC";
+            case 4:
+                return "DC";
+            case 3:
+                return "DD";
+            default:
+                return "FF";
         }
     }
 

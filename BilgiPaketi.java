@@ -4,7 +4,7 @@ import java.util.List;
 
 public class BilgiPaketi {
 
-    private List<Ders> tumDersler;
+    private final List<Ders> tumDersler;
 
     public BilgiPaketi() {
         tumDersler = new ArrayList<>();
@@ -17,7 +17,7 @@ public class BilgiPaketi {
     public void TranskriptSorgula(Ogrenci ogrenci) {
         for (Ders ders : tumDersler) {
             if (ders.ogrenciKayitlimi(ogrenci.getNumara())) {
-                System.out.print(ders.dersAdi + " adli dersin kredisi " + ders.kredi + " harf notu " + ders.harfNotu(0));
+                System.out.print(ders.dersAdi + " adli dersin kredisi " + ders.kredi + " harf notu " + ders.getDersHarfNotu());
             }
         }
     }

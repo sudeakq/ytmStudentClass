@@ -10,6 +10,7 @@ class MeslekiEğitimDersi extends Ders {
         if (notlar.length != 1) {
             throw new IllegalArgumentException("Mesleki eğitim  dersleri için 1 not girilmelidir");
         }
+        setDersHarfNotu(super.harfNotu(notlar[0]));
         return super.harfNotu(notlar[0]);
     }
 }
